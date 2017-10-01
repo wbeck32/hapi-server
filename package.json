@@ -33,6 +33,7 @@
     "hapi-async-handler": "^1.0.3",
     "mocha": "^3.5.3",
     "mocha-better-spec-reporter": "^3.1.0",
+    "mongoose": "^4.11.14",
     "morgan": "^1.9.0",
     "restify": "^6.0.1",
     "restify-clients": "^1.5.2",

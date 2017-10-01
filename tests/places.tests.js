@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
-const connect = require('../lib/utils/connect');
-const connection = require('mongoose').connection;
+// const connect = require('../lib/utils/connect');
+// const connection = require('mongoose').connection;
 const req = require('superagent');
 const { drop } = require('../lib/utils/db');
 const placesData = require('./placesData');
@@ -16,18 +16,15 @@ describe.skip('e2e places tests', () => {
   let seededData = [];
 
   before(async () => {
-    await connect();
+    // await connect();
     await drop();
   });
 
   it('POST /', async (err, req, res, obj) => {
-    const place = { place: 'little yellow house' };
-
-    const savedPlace = await client.post('/places').send(place)
+    const place = { "place": "little yellow house" };
+    const savedPlace = await client.post('/').send(place)
     console.log(55, savedPlace)
 
-
-    //   assert.equal(seededData.length, 6);
   });
   it('GET /', async () => {
     const foundData = await req.get('/places');
