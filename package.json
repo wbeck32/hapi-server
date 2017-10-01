@@ -27,6 +27,7 @@
   "homepage": "https://github.com/wbeck32/hapi-server#readme",
   "dependencies": {
     "assert": "^1.4.1",
+    "bluebird": "^3.5.0",
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "hapi-async-handler": "^1.0.3",
@@ -35,6 +36,7 @@
     "morgan": "^1.9.0",
     "restify": "^6.0.1",
     "restify-clients": "^1.5.2",
+    "restify-mongoose": "^2.0.1",
     "superagent": "^3.6.1"
   }
 }

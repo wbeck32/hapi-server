@@ -1,13 +1,4 @@
-place = {
-  nick: '',
-  streetAddress: '',
-  city: '',
-  state: '',
-  zip: 0,
-  yearsThere: ''
-};
-
-module.exports = [
+module.exports =[
   {
     nick: 'little yellow house',
     streetAddress: '188 N. Main Street',
@@ -48,4 +39,4 @@ module.exports = [
     zip: 0,
     yearsThere: '2016-present'
   }
-];
+]
