@@ -1,17 +1,19 @@
-/* eslint no-console: "off" */
-const Hapi = require('hapi');
-const server = new Hapi.Server();
-const app = require('./lib/app')
-const people = require('./lib/routes/people');
+var restify = require('restify');
 
-server.connection({ port: 3001, host: 'localhost' });
-server.route({ method: '*', path: '/people', handler: people });
-
-server.start((err) => {
-    if (err) {
-        throw err;
-    }
-    console.log(`Server running at: ${server.info.uri}`);
+const server = restify.createServer({
+  name: 'myapp',
+  version: '1.0.0'
 });
-console.log(11, server)
 
+server.use(restify.plugins.acceptParser(server.acceptable));
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.bodyParser());
+
+server.get('/places', function (req, res, next) {
+  res.send(req.params);
+  return next();
+});
+
+server.listen(8080, function () {
+  console.log('%s listening at %s', server.name, server.url);
+});
